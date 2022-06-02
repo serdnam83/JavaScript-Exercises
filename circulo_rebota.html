@@ -1,0 +1,52 @@
+<body>
+
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+        var pizarra = document.querySelector("canvas");
+        var pincel = pizarra.getContext("2d");
+
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function limpiarPantalla(){
+            pincel.clearRect(0,0,600,400);
+        }
+
+        function disenarCirculo(x, y, radio) {
+            pincel.fillStyle = "blue";
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+
+        let x = 0;
+        var avance = true;
+
+        function actualizarPantalla(){
+            limpiarPantalla();
+            disenarCirculo(x,20,10);
+            if(x == 600){
+                avance = false;
+            }
+            if(x == 0){
+                avance = true;
+            }
+            if(avance){
+                x++;    
+            } else{
+                x--;
+            }
+            
+            
+        }
+        setInterval(actualizarPantalla,10);
+
+        
+        
+        
+    </script>
+
+
+
+</body>

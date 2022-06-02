@@ -1,0 +1,48 @@
+<meta charset="UTF-8"
+<body>
+<h1>PROGRAMA PARA CALCULAR INDICE DE MASA</h1>
+
+<br></br>
+
+<script>
+    function saltarLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(mensaje){
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function calcularImc(peso,altura){
+        imc = peso / (altura*altura);
+        return(imc);
+    }
+    
+    let nombre = prompt("Ingrese su nombre");
+    let peso = prompt("Ingrese su peso en kilos");
+    let altura = prompt("Ingrese su estatura en metros");
+    
+    imcCalculado = calcularImc(peso,altura);
+    
+    if(imcCalculado < 18.5){
+        imprimir("Su IMC es " + imcCalculado + " su peso es menor al rango recomendado")
+    }
+    if(imcCalculado >=18.5 && imcCalculado <= 24.9){
+        imprimir("Su IMC es " + imcCalculado + " su peso esta en el rango normal")
+    }    
+    
+    if(imcCalculado >=25 ){
+        imprimir("Su IMC es " + imcCalculado + " su peso es mayor al rango recomendado")
+    }    
+
+    
+
+    
+
+        
+
+</script>
+
+</body>

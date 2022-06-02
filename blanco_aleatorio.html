@@ -1,0 +1,75 @@
+<body>
+
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+        var pizarra = document.querySelector("canvas");
+        var pincel = pizarra.getContext("2d");
+
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0, 0, 600, 400);
+
+        let xAleatorio;
+        let yAleatorio;
+
+        function limpiarPantalla() {
+            pincel.clearRect(0, 0, 600, 400);
+        }
+
+        function disenarCirculo(x, y, radio, color) {
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+
+        let x = 0;
+        var avance = true;
+
+
+
+        function disenarDiana(x, y) {
+            disenarCirculo(x, y, 30, "red");
+            disenarCirculo(x, y, 20, "white");
+            disenarCirculo(x, y, 10, "red");
+        }
+
+        function sortearPosicion(maximo) {
+            return Math.floor(Math.random() * maximo);
+        }
+
+        function actualizarPantalla() {
+            limpiarPantalla();
+            xAleatorio = sortearPosicion(600);
+            yAleatorio = sortearPosicion(400);
+            disenarDiana(xAleatorio, yAleatorio);
+            x++;
+        }
+
+        function disparar(evento) {
+            let x = evento.pageX - pizarra.offsetLeft;
+            let y = evento.pageY - pizarra.offsetTop;
+
+            if ((x < xAleatorio + 10) &&
+                (x > xAleatorio - 10) &&
+                (y < yAleatorio + 10) &&
+                (y > yAleatorio - 10)) {
+                alert("En el blanco");
+            }
+
+
+        }
+
+        pizarra.onclick = disparar;
+
+
+        setInterval(actualizarPantalla, 1900);
+
+
+
+
+    </script>
+
+
+
+</body>

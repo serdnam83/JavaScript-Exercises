@@ -1,0 +1,56 @@
+<meta charset="UTP-8">
+
+<headd>
+
+</headd>
+
+<body>
+
+<script>
+    function saltarLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(mensaje){
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function sortea(numero){
+        return(Math.round(Math.random()*numero));        
+    }
+
+    alert("Bienvenido a Adivina adivinador, en este juego tendras 3 oportunidades para adivinar un numero en el que esta pensando la maquina. Te animas?");
+
+    const intentos = 3;
+    let contador = 1;
+    let numeroPensado = sortea(prompt("El rango de adivinanza estara entre 0 y ?"));
+
+    while(contador <= intentos){        
+    let numeroIngresado = parseInt(prompt("Cual crees que es el numero en el que piensa la maquina?"));
+        if(numeroIngresado == numeroPensado){
+        alert("Acertaste en el intento " + contador + ", el numero era " + numeroPensado);
+        break;
+
+    } else{
+        if(numeroIngresado < numeroPensado){
+        alert("Fallaste, el numero es mayor al que tu ingresaste, intentalo de nuevo");            
+        } else{
+            alert("Fallaste, el numero es menor al que tu ingresaste, intentalo de nuevo")            
+        }
+    }
+    contador++;
+    if(contador > intentos){
+                imprimir("Lo siento, el numero era " + numeroPensado);
+            }
+    }
+    
+    imprimir("Fin");
+
+
+    
+</script>
+
+
+</body>

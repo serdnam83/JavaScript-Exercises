@@ -1,0 +1,28 @@
+<body>
+    <canvas height="300" width="350"></canvas>
+</body>
+
+<script>
+
+    var pizarra = document.querySelector("canvas");
+    var pincel = pizarra.getContext("2d");
+
+    pincel.fillStyle = ("#00AA00");
+    pincel.fillRect(0,0,350,300);
+
+    pincel.fillStyle = ("#000000");
+    pincel.fillRect(50,50,90,90);
+
+    pincel.fillStyle = ("#000000");
+    pincel.fillRect(210,50,90,90);
+
+    pincel.fillStyle = ("#000000");
+    pincel.fillRect(140,140,70,100);
+
+    pincel.fillStyle = ("#000000");
+    pincel.fillRect(100,190,40,110);
+
+    pincel.fillStyle = ("#000000");
+    pincel.fillRect(210,190,40,110);
+
+</script>

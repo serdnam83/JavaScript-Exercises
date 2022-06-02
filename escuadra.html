@@ -1,0 +1,32 @@
+<body>
+    
+    <canvas height="500" width="600"></canvas>
+
+    <script>
+
+        var pizarra = document.querySelector("canvas");
+        var pincel = pizarra.getContext("2d");
+
+        pincel.fillStyle = ("rgb(0,0,0)");
+        pincel.fillRect(0,0,600,500);
+
+        pincel.fillStyle = ("rgb(256,256,256)");
+        pincel.beginPath();
+        pincel.moveTo(100,50);
+        pincel.lineTo(100,450);
+        pincel.lineTo(500,450);
+        pincel.lineTo(100,50);
+        pincel.fill();
+
+        pincel.fillStyle = ("rgb(0,0,0)");
+        pincel.beginPath();
+        pincel.moveTo(150,180);
+        pincel.lineTo(150,400);
+        pincel.lineTo(380,400);
+        pincel.lineTo(150,180);
+        pincel.fill();
+
+
+    </script>
+
+</body>

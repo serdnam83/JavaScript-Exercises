@@ -1,0 +1,36 @@
+<meta chasrset="UTF-8">
+<head>
+
+</head>
+
+<body>
+
+    <script>
+    function saltarLinea(){
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(mensaje){
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    alert("Bienvenido al programa para calcular el promedio   de edad de tu familia");
+
+    let numeroFamiliares = parseInt(prompt("Cuantos miembros tiene tu familia?"));
+    var contador = 1;
+    let edad = 0;    
+
+    while(contador <= numeroFamiliares){
+        edad = edad + parseInt(prompt("Ingresa la edad del miembro numero " + contador ));      
+        contador++;
+    }
+
+    imprimir("El promedio de edad de tu familia es " + edad/numeroFamiliares);
+
+    </script>
+
+
+
+</body>

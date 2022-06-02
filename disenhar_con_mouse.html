@@ -1,0 +1,62 @@
+<body>
+
+    <canvas width="600" height="400"></canvas>
+    
+    
+    <script>
+        var pizarra = document.querySelector("canvas");
+        var pincel = pizarra.getContext('2d');
+        pincel.fillStyle = 'grey';
+        pincel.fillRect(0, 0, 600, 400);
+
+        pincel.fillStyle = "red";
+        pincel.fillRect(0, 0, 50, 50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(0, 0, 50, 50);
+        
+
+        pincel.fillStyle = "green";
+        pincel.fillRect(50, 0, 50, 50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(50, 0, 50, 50);
+
+
+        pincel.fillStyle = "blue";
+        pincel.fillRect(100, 0, 50, 50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(100, 0, 50, 50);
+
+        var puedoDibujar = false;
+
+        function dibujarCirculo(evento) {
+
+            if (puedoDibujar) {
+                var x = evento.pageX - pizarra.offsetLeft;
+                var y = evento.pageY - pizarra.offsetTop;
+                pincel.fillStyle = 'blue';
+                pincel.beginPath();
+                pincel.arc(x, y, 5, 0, 2 * 3.14);
+                pincel.fill();
+            }
+
+        }
+
+        pizarra.onmousemove = dibujarCirculo;
+
+        function habilitarDibujar() {
+
+            puedoDibujar = true;
+        }
+
+        function deshabilitarDibujar() {
+
+            puedoDibujar = false;
+        }
+
+        pizarra.onmousedown = habilitarDibujar;
+
+        pizarra.onmouseup = deshabilitarDibujar;
+
+    </script>
+
+</body>

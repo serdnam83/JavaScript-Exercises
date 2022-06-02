@@ -1,0 +1,61 @@
+<body>
+
+    <canvas width="600" height="400">
+
+    </canvas>
+
+    <script>
+        function dibujarCuadradoRed(x,y) {
+            var pizarra = document.querySelector("canvas");
+            var pincel = pizarra.getContext("2d");
+            pincel.fillStyle = "red";
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x, y, 50, 50);
+        }
+
+        function dibujarCuadradoAmarill(x,y) {
+            var pizarra = document.querySelector("canvas");
+            var pincel = pizarra.getContext("2d");
+            pincel.fillStyle = "yellow";
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x, y, 50, 50);
+        }
+
+        function dibujarCuadradoVerde(x,y) {
+            var pizarra = document.querySelector("canvas");
+            var pincel = pizarra.getContext("2d");
+            pincel.fillStyle = "green";
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x, y, 50, 50);
+        }
+        
+        /*
+        let x = 0;
+
+        while(x < 600){
+            dibujarCuadradoRed(x,0);
+            dibujarCuadradoAmarill(x,50);
+            dibujarCuadradoVerde(x,100);
+            x = x + 50;
+
+        }
+        */ 
+
+        for(let x = 0; x < 600; x = x + 50){
+            dibujarCuadradoRed(x,0);
+            dibujarCuadradoAmarill(x,50);
+            dibujarCuadradoVerde(x,100);
+
+        }
+        
+        
+
+
+
+
+    </script>
+
+</body>
